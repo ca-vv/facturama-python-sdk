@@ -390,14 +390,14 @@ class Cfdi(Facturama):
                                       params=params, version=v)
 
     @classmethod
-    def list(cls, tipo, keyword, status):
+    def list(cls, tipo, dateStart, status):
         """
         :param oid: id object
         :return: None
         """
         v = 0
         return cls.build_http_request(
-            'get', '{}?type={}&keyword={}&status={}'.format(cls.__name__, tipo, keyword, status), version=v
+            'get', '{}?type={}&dateStart={}&status={}'.format(cls.__name__, tipo, dateStart, status), version=v
         )
 
     @classmethod
